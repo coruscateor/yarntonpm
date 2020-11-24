@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'yarntonpm'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=yarntonpm",
+                    "--package=yarntonpm"
+                ],
+                "filter": {
+                    "name": "yarntonpm",
+                    "kind": "bin"
+                }
+            },
+            "args": ["yarn", "add", "bulma", "node-sass", "gatsby-plugin-sass"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'yarntonpm'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=yarntonpm",
+                    "--package=yarntonpm"
+                ],
+                "filter": {
+                    "name": "yarntonpm",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
